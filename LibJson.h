@@ -8,6 +8,8 @@
 #include <map>
 #include <string>
 #include <vector>
+// TODO: add all class JSON
+// TODO: components arhitecture
 
 //---------------------------------------------------------------------------
 
@@ -20,19 +22,20 @@ namespace ZAA{
 	{
 		public:
 
-		Json();
-		~Json();
-		void setValue(typeJD key, typeJD value);
-		void setList(typeJD key, const std::vector<typeJD>& list);
-		bool save(const typeJD& path);
-		bool load(const typeJD& path);
-		std::vector<std::pair<typeJD, typeJD> >getPairs();
-		typeJD getParam(const typeJD& key);
+			Json();
+			~Json();
+			void setValue(typeJD key, typeJD value);
+			void setList(typeJD key, const std::vector<typeJD>& list);
+			void clearJS(void);
+			bool save(const typeJD& path);
+			bool load(const typeJD& path);
+			std::vector<std::pair<typeJD, typeJD> >getPairs();
+			std::vector<typeJD> getParam(const typeJD& key);
 
-	private:
+		private:
 
-		MapJSON data_;
-
+			typeJD pars(typeJD data);
+			MapJSON data_;
 	};
 
 };
