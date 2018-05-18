@@ -176,6 +176,7 @@ std::vector<std::pair<typeJD, typeJD> > Json::getPairs()
 std::vector<typeJD> Json::getParam(const typeJD& key)
 {
    std::vector<typeJD> temp;
+   temp.push_back("");
    MapJSON::iterator it = data_.find(key);
    if(it == data_.end())return temp;
    else return data_[key];
