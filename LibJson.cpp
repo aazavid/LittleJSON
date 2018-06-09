@@ -183,6 +183,10 @@ std::vector<typeJD> Json::getParam(const typeJD& key)
 }
 typeJD Json::pars(typeJD data)
 {
+  if(data[data.length()-2]=='|')
+  {
+	return data.substr(1,data.length()-2);
+  }
   return data.substr(1,data.length()-3);
 }
 
